@@ -34,10 +34,21 @@
  ### 🔹ROC-AUC
 	### 🔹Confusion Matrix
 ## 🚀 Results :
- ### 🔹Model	Accuracy	ROC-AUC
- ### 🔹CatBoost	0.8917	0.9176
- ### 🔹RandomForest	0.8750	0.9054
- ### 🔹XGBoost	0.8700	0.9030
+## 📊 Classification Model Performance Summary  
+
+| Model                 | Accuracy  | Precision | Recall  | F1-score | ROC-AUC |
+|-----------------------|-----------|-----------|---------|----------|---------|
+| CatBoost              | 0.8976    | 0.5738    | 0.3571  | 0.4403   | 0.9176  |
+| Logistic Regression   | 0.8939    | 0.5294    | 0.1837  | 0.2727   | 0.8644  |
+| Decision Tree         | 0.8729    | 0.4220    | 0.4694  | 0.4444   | 0.6957  |
+| Random Forest         | 0.8928.   | 0.6087    | 0.2857  | 0.3889   | 0.9120  |
+| Gradient Boosting     | 0.8928    | 0.5094    | 0.2755  | 0.3576   | 0.8019  |
+| AdaBoost              | 0.8994    | 0.5538    | 0.3673  | 0.4417   | 0.8905  |
+| KNN                   | 0.8917    | 0.5000    | 0.2041  | 0.2899   | 0.7393  |
+| SVM                   | 0.8961    | 0.5556    | 0.2041  | 0.2985   | 0.8245  |
+| LightGBM              | 0.8950    | 0.5211    | 0.3776  | 0.4379   | 0.9035  |
+| XGBoost               | 0.8972    | 0.5352    | 0.3878  | 0.4497   | 0.9052  |
+
  ### 📌 CatBoost was selected as the final model for its high accuracy, excellent AUC score, and low need for hyperparameter tuning.
 ## 📈 Visualizations
 ### 🔹 ROC Curve
@@ -48,4 +59,4 @@
   ### 🔹ML Libraries: XGBoost, LightGBM, CatBoost, Imbalanced-learn
   ### 🔹Environment: Jupyter Notebook
 ## 📜 Conclusion
- ### 🔹Using CatBoost, we achieved 91.76% ROC-AUC and 89.17% accuracy, successfully identifying likely term deposit subscribers. This solution can help banks save resources and increase campaign conversion rates.
+ ### 🔹Using CatBoost, we achieved 91.76% ROC-AUC and 89.76% accuracy, successfully identifying likely term deposit subscribers. This solution can help banks save resources and increase campaign conversion rates.
