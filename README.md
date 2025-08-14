@@ -1,61 +1,35 @@
-## BANK_TERM_DEPOSIT_SUBSCRIPTION_PREDICTION
-📌 Bank Term Deposit Subscription Prediction
+ BANK_TERM_DEPOSIT_SUBSCRIPTION_PREDICTION
+ 📌 Bank Term Deposit Subscription Prediction
 🏦 Project Overview
 🔹This project predicts whether a customer will subscribe to a term deposit using machine learning.
    It is based on a Portuguese bank's marketing campaign dataset. The goal is to improve marketing efficiency by identifying potential 
    subscribers in advance.
-
 🎯 Why It Matters
-
 Reduce marketing costs by focusing only on high-potential clients
-
 Improve campaign success rates with targeted offers
-
 Enhance customer experience by avoiding irrelevant calls
-
 📊 Dataset Summary
-
 Target Variable: y (Binary: yes / no)
 Features include:
-
 Demographic: Age, Job, Marital Status, Education
-
 Financial: Balance, Housing Loan, Personal Loan
-
 Campaign-related: Contact Type, Last Contact Duration, Number of Contacts, Previous Outcome
-
 Economic Indicators: Employment Rate, Consumer Confidence Index, Interest Rates
-
 🛠 Approach
-
 Data Preprocessing
-
 Missing value handling
-
 Encoding categorical variables
-
 Feature scaling
-
 Data balancing using SMOTE/SMOTENC
-
 Model Training & Comparison
-
 Logistic Regression
-
 Decision Tree
-
 Random Forest
-
 XGBoost
-
 LightGBM
-
 CatBoost (best performer)
-
 Gradient Boosting, KNN, Voting Classifier, AdaBoost
-
 Evaluation Metrics
-
 Accuracy
 
 Precision, Recall, F1-score
