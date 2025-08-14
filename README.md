@@ -1,9 +1,9 @@
-# BANK_TERM_DEPOSIT_SUBSCRIPTION_PREDICTION
+## BANK_TERM_DEPOSIT_SUBSCRIPTION_PREDICTION
 📌 Bank Term Deposit Subscription Prediction
 🏦 Project Overview
-
-This project predicts whether a customer will subscribe to a term deposit using machine learning.
-It is based on a Portuguese bank's marketing campaign dataset. The goal is to improve marketing efficiency by identifying potential subscribers in advance.
+🔹 This project predicts whether a customer will subscribe to a term deposit using machine learning.
+    It is based on a Portuguese bank's marketing campaign dataset. The goal is to improve marketing efficiency by identifying potential 
+    subscribers in advance.
 
 🎯 Why It Matters
 
