@@ -1,62 +1,84 @@
+# 💰 Bank Term Deposit Subscription Prediction
 
- # 📌 Bank Term Deposit Subscription Prediction : 
- 
-## 🏦 Project Overview :
-### 🔹 This project predicts whether a customer will subscribe to a term deposit using machine learning.It is based on a Portuguese bank's marketing campaign dataset. The goal is to improve marketing efficiency by identifying potential  subscribers in advance.
-## 🎯 Why It Matters :
-### 🔹 Reduce marketing costs by focusing only on high-potential clients.
-### 🔹 Improve campaign success rates with targeted offers.
-### 🔹 Enhance customer experience by avoiding irrelevant calls.
-## 📊 Dataset Summary :
-### 🔹Target Variable: y (Binary: yes / no)
-### 🔹Features include:
-   ### 🔹Demographic: Age, Job, Marital Status, Education .
-   ### 🔹Financial: Balance, Housing Loan, Personal Loan .
-   ### 🔹Campaign-related: Contact Type, Last Contact Duration, Number of Contacts, Previous Outcome .
-   ### 🔹Economic Indicators: Employment Rate, Consumer Confidence Index, Interest Rates .
-## 🛠 Approach :
- ### 🔹Data Preprocessing
- ### 🔹Missing value handling
- ### 🔹Encoding categorical variables
- ### 🔹Feature scaling
- ### 🔹Data balancing using SMOTE/SMOTENC
- ### 🔹Model Training & Comparison
- ### 🔹Logistic Regression
- ### 🔹Decision Tree
- ### 🔹Random Forest
- ### 🔹XGBoost
- ### 🔹LightGBM
- ### 🔹CatBoost (best performer)
- ### 🔹Gradient Boosting, KNN, Voting Classifier, AdaBoost
- ### 🔹Evaluation Metrics
- ### 🔹Accuracy
-	### 🔹Precision, Recall, F1-score
- ### 🔹ROC-AUC
-	### 🔹Confusion Matrix
-## 🚀 Results :
-## 📊 Classification Model Performance Summary  
+*Predicting customer subscription to term deposits using machine learning classification models*
 
-| Model                 | Accuracy  | Precision | Recall  | F1-score | ROC-AUC |
-|-----------------------|-----------|-----------|---------|----------|---------|
-| CatBoost              | 0.8976    | 0.5738    | 0.3571  | 0.4403   | 0.9176  |
-| Logistic Regression   | 0.8939    | 0.5294    | 0.1837  | 0.2727   | 0.8644  |
-| Decision Tree         | 0.8729    | 0.4220    | 0.4694  | 0.4444   | 0.6957  |
-| Random Forest         | 0.8928.   | 0.6087    | 0.2857  | 0.3889   | 0.9120  |
-| Gradient Boosting     | 0.8928    | 0.5094    | 0.2755  | 0.3576   | 0.8019  |
-| AdaBoost              | 0.8994    | 0.5538    | 0.3673  | 0.4417   | 0.8905  |
-| KNN                   | 0.8917    | 0.5000    | 0.2041  | 0.2899   | 0.7393  |
-| SVM                   | 0.8961    | 0.5556    | 0.2041  | 0.2985   | 0.8245  |
-| LightGBM              | 0.8950    | 0.5211    | 0.3776  | 0.4379   | 0.9035  |
-| XGBoost               | 0.8972    | 0.5352    | 0.3878  | 0.4497   | 0.9052  |
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)]()
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange)]()
+[![CatBoost](https://img.shields.io/badge/CatBoost-Classifier-yellow)]()
+[![License](https://img.shields.io/badge/License-MIT-green.svg)]()
 
- ### 📌 CatBoost was selected as the final model for its high accuracy, excellent AUC score, and low need for hyperparameter tuning.
-## 📈 Visualizations
-### 🔹 ROC Curve
-### 🔹 Confusion Matrix
-### 🔹 Feature Importance (CatBoost)
-## 🖥 Tech Stack :
-  ### 🔹Python: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
-  ### 🔹ML Libraries: XGBoost, LightGBM, CatBoost, Imbalanced-learn
-  ### 🔹Environment: Jupyter Notebook
-## 📜 Conclusion
- ### 🔹Using CatBoost, we achieved 91.76% ROC-AUC and 89.76% accuracy, successfully identifying likely term deposit subscribers. This solution can help banks save resources and increase campaign conversion rates.
+---
+
+## 🧭 Table of Contents
+- [Overview](#-overview)
+- [Problem Statement](#-problem-statement)
+- [Dataset](#-dataset)
+- [Workflow](#-workflow)
+- [Model Performance](#-model-performance)
+- [Insights](#-insights)
+- [Limitations](#-limitations)
+- [Future Work](#-future-work)
+- [How to Run](#-how-to-run)
+- [Tools & Libraries](#-tools--libraries)
+- [Conclusion](#-conclusion)
+- [Author](#-author)
+
+---
+
+## 🔍 Overview
+This project predicts whether a **bank customer** will subscribe to a **term deposit** based on demographic, social, and economic attributes. Accurate predictions help banks:
+- Target **potential subscribers** effectively  
+- Reduce **marketing costs**  
+- Improve **conversion rates**  
+- Personalize **customer engagement** strategies
+
+---
+
+## 🎯 Problem Statement
+- **Goal:** Predict whether a customer will subscribe to a term deposit (`yes` or `no`)  
+- **Type:** **Binary Classification**  
+- **Target Variable:** `y` *(subscription status)*
+
+---
+
+## 📁 Dataset
+- **Name:** Bank Marketing Dataset  
+- **Source:** UCI Machine Learning Repository / Kaggle  
+- **Shape:** `(45211, 17)`
+
+**Features**
+
+| Feature | Type | Description |
+|---|---|---|
+| age | Numeric | Age of the client |
+| job | Categorical | Job type |
+| marital | Categorical | Marital status |
+| education | Categorical | Education level |
+| default | Binary | Credit in default? |
+| balance | Numeric | Avg yearly balance (EUR) |
+| housing | Binary | Housing loan status |
+| loan | Binary | Personal loan status |
+| contact | Categorical | Contact communication type |
+| day | Numeric | Last contact day of the month |
+| month | Categorical | Last contact month of year |
+| duration | Numeric | Last contact duration (seconds) |
+| campaign | Numeric | Contacts during current campaign |
+| pdays | Numeric | Days since last contact (−1 = never) |
+| previous | Numeric | Contacts before this campaign |
+| poutcome | Categorical | Outcome of previous campaign |
+| **y (Target)** | Binary | Subscribed? (`yes`/`no`) |
+
+---
+
+## 🔄 Workflow
+
+```mermaid
+flowchart LR
+    A[Raw Data] --> B[Data Cleaning<br/>missing values, IQR outliers]
+    B --> C[Encoding & Scaling<br/>OHE/LabelEnc + StandardScaler]
+    C --> D[Train/Test Split (80/20)]
+    D --> E[Model Training<br/>LR / DT / RF / GB / CatBoost]
+    E --> F[Evaluation<br/>Accuracy • Precision • Recall • F1 • ROC-AUC]
+    F --> G[Best Model Selection<br/>CatBoost]
+    G --> H[Explainability<br/>Feature Importance, Confusion Matrix, ROC]
+
