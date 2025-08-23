@@ -4,7 +4,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)]()
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange)]()
-[![CatBoost](https://img.shields.io/badge/CatBoost-Classifier-yellow)]()
+[![RandomForest](https://img.shields.io/badge/RandomForest-Classifier-green)]()
 [![License](https://img.shields.io/badge/License-MIT-green.svg)]()
 
 ---
@@ -101,7 +101,10 @@ Evaluated multiple algorithms:
 - Decision Tree Classifier  
 - Random Forest Classifier  
 - Gradient Boosting Classifier  
-- CatBoost Classifier
+- AdaBoost Classifier  
+- KNN  
+- SVM  
+- XGBoost  
 
 ---
 
@@ -110,15 +113,18 @@ Evaluated multiple algorithms:
 | Model                | Accuracy | Precision | Recall  | F1-score | ROC-AUC |
 |----------------------|----------|-----------|---------|----------|---------|
 | Logistic Regression  | 0.8939   | 0.5294    | 0.1837  | 0.2727   | 0.8644  |
-| Decision Tree        | 0.8729   | 0.4220    | 0.3571  | 0.3860   | 0.7981  |
-| Random Forest        | 0.8965   | 0.5556    | 0.2449  | 0.3404   | 0.9127  |
-| Gradient Boosting    | 0.8990   | 0.5517    | 0.2653  | 0.3579   | 0.9178  |
-| **CatBoost ✅**       | **0.9017** | **0.5738** | **0.3571** | **0.4403** | **0.9233** |
+| Decision Tree        | 0.8729   | 0.4220    | 0.4694  | 0.4444   | 0.6957  |
+| **Random Forest ✅**   | **0.8972** | **0.5641** | **0.2245** | **0.3212** | **0.9120** |
+| Gradient Boosting    | 0.8928   | 0.5094    | 0.2755  | 0.3576   | 0.9019  |
+| AdaBoost             | 0.8994   | 0.5538    | 0.3673  | 0.4417   | 0.8905  |
+| KNN                  | 0.8917   | 0.5000    | 0.2041  | 0.2899   | 0.7393  |
+| SVM                  | 0.8961   | 0.5556    | 0.2041  | 0.2985   | 0.8245  |
+| XGBoost              | 0.8972   | 0.5352    | 0.3878  | 0.4497   | 0.9052  |
 
-**🏆 Best Model:** **CatBoost Classifier** (highest ROC-AUC = **0.9233**)  
-**🔥 Key Predictors:** `duration`, `contact`, `poutcome`, `balance`, `age`
+**🏆 Best Model:** **Random Forest Classifier**  
+**🔥 Key Metrics:** Accuracy = 0.8972, Precision = 0.5641, Recall = 0.2245, F1-score = 0.3212, ROC-AUC = 0.9120
 
-> ⚠️ *Note:* `duration` is a strong signal but can be **leaky** if used for pre-call targeting. Consider training a variant **without** `duration` for deployment.
+> ⚠️ *Note:* `duration` is a strong predictor but may be **leaky** if used for pre-call targeting. Consider deploying a variant **without** it for production.
 
 ---
 
@@ -130,22 +136,22 @@ Evaluated multiple algorithms:
 ---
 
 ## 📌 Insights
-- 📞 **Call duration** is the strongest predictor — longer calls → higher chance of subscription  
-- ✅ Positive **previous campaign outcomes** increase conversion likelihood  
-- 💰 Higher **balances** and certain **jobs** (e.g., management, technician) correlate with higher subscription rates
+- 📞 **Call duration** strongly affects subscription probability  
+- ✅ Positive **previous campaign outcomes** increase conversion  
+- 💰 Higher **balances** and certain **jobs** correlate with better subscription rates
 
 ---
 
 ## ⚠️ Limitations
 - Class imbalance (more “no” than “yes”) reduces **recall**  
-- Socio-economic features may **drift** over time  
-- Campaign-specific features (e.g., `duration`) might not be available **pre-contact**
+- Campaign-specific features (e.g., `duration`) may not be available pre-contact  
+- Socio-economic features may **drift** over time
 
 ---
 
 ## 🚀 Future Work
 - Apply **SMOTE** or class-weighting to handle imbalance  
-- Explore **stacked ensembles** and **probability calibration**  
+- Explore **stacked ensembles** or **probability calibration**  
 - Build a real-time scoring **Streamlit/Flask** app  
 - Add **drift monitoring** and scheduled **retraining**
 
@@ -156,24 +162,20 @@ Evaluated multiple algorithms:
 - pandas, numpy  
 - scikit-learn  
 - matplotlib, seaborn  
-- CatBoost, XGBoost  
+- RandomForest, XGBoost  
 
 ---
 
 ## 📜 Conclusion  
-This project demonstrates how machine learning classification can help predict **bank term deposit subscriptions**.  
-Using **CatBoost Classifier** with preprocessing, feature engineering, and tuning, we achieved **ROC-AUC = 0.9233**.  
-
-Such models can help banks:  
-- 📊 Improve marketing efficiency  
-- 📈 Increase conversion rates  
-- 💵 Reduce unnecessary campaign costs  
+This project demonstrates how **Random Forest Classifier** can effectively predict bank term deposit subscriptions.  
+With preprocessing, feature engineering, and hyperparameter tuning, we achieved **Accuracy = 0.8972** and **ROC-AUC = 0.9120**, supporting better marketing targeting and decision-making.
 
 ---
 
 ## 👤 Author  
 **Mali Satish**  
-🎓 Machine Learning Enthusiast | Data Science Student @ BHU  ---
+🎓 Machine Learning Enthusiast | Data Science Student @ BHU
+
 
 
 
