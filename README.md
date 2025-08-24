@@ -104,7 +104,7 @@ Evaluated multiple algorithms:
 - AdaBoost Classifier  
 - KNN  
 - SVM  
-- XGBoost  
+- XGBoost Classifier 
 
 ---
 
@@ -114,12 +114,12 @@ Evaluated multiple algorithms:
 |----------------------|----------|-----------|---------|----------|---------|
 | Logistic Regression  | 0.8939   | 0.5294    | 0.1837  | 0.2727   | 0.8644  |
 | Decision Tree        | 0.8729   | 0.4220    | 0.4694  | 0.4444   | 0.6957  |
-| **Random Forest ✅**   | **0.8972** | **0.5641** | **0.2245** | **0.3212** | **0.9120** |
-| Gradient Boosting    | 0.8928   | 0.5094    | 0.2755  | 0.3576   | 0.9019  |
-| AdaBoost             | 0.8994   | 0.5538    | 0.3673  | 0.4417   | 0.8905  |
+| **Random Forest Classifier ✅**   | **0.8972** | **0.5641** | **0.2245** | **0.3212** | **0.9120** |
+| Gradient Boosting Classifier    | 0.8928   | 0.5094    | 0.2755  | 0.3576   | 0.9019  |
+| AdaBoost Classifier             | 0.8994   | 0.5538    | 0.3673  | 0.4417   | 0.8905  |
 | KNN                  | 0.8917   | 0.5000    | 0.2041  | 0.2899   | 0.7393  |
 | SVM                  | 0.8961   | 0.5556    | 0.2041  | 0.2985   | 0.8245  |
-| XGBoost              | 0.8972   | 0.5352    | 0.3878  | 0.4497   | 0.9052  |
+| XGBoost Classifier              | 0.8972   | 0.5352    | 0.3878  | 0.4497   | 0.9052  |
 
 **🏆 Best Model:** **Random Forest Classifier**  
 **🔥 Key Metrics:** Accuracy = 0.8972, Precision = 0.5641, Recall = 0.2245, F1-score = 0.3212, ROC-AUC = 0.9120
